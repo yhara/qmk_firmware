@@ -144,9 +144,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |   !  |  @   |   #  |  $   |  %   |      |           |      |  ^   |  &   |   (  |  )   |  *   |   BS   |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   "  |  ~   |   =  |  |   |  `   |------|           |------|  BS  |  +   |  [   |   ]  |  '   |        |
+ * |        |      |  ~   |   =  |  |   |  `   |------|           |------|  BS  |  "   |  [   |   ]  |  '   |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      |  {   |   }  |  \   |        |
+ * |        |      |      |      |      |      |      |           |      |      |  +   |  {   |   }  |  \   |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [LOWER] = KEYMAP(
        KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  , KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC, KC_NO  ,
-       KC_NO  , KC_DQT,  KC_TILD, KC_EQL , KC_PIPE, KC_GRV,
+       KC_NO  , KC_NO ,  KC_TILD, KC_EQL , KC_PIPE, KC_GRV,
        KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
                                            KC_NO  , KC_NO  ,
@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // right hand
        KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  ,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_BSPC,
-                 KC_BSPC, KC_PLUS, KC_LBRC, KC_RBRC, KC_QUOT, KC_NO  ,
+                 KC_BSPC, KC_DQT , KC_LBRC, KC_RBRC, KC_QUOT, KC_NO  ,
        KC_NO  ,  KC_NO  , KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS, KC_NO  ,
                           KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  , KC_NO  ,
