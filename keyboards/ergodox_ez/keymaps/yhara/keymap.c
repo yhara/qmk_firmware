@@ -3,6 +3,9 @@
 #include "action_layer.h"
 #include "version.h"
 
+// Emoji
+const uint32_t PROGMEM unicode_map[] = {0x1F363};
+
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
@@ -45,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 KC_HOME,
                                                 KC_SPC,KC_BSLS, KC_N,
         // right hand
-             KC_5,        KC_6,   KC_7,    KC_8,   KC_9,   KC_0,             KC_MINS,
+             X(0),        KC_6,   KC_7,    KC_8,   KC_9,   KC_0,             KC_MINS,
              KC_QUOT,     KC_Y,   KC_U,    KC_I,   KC_O,   KC_P,             KC_BSPC,
                           KC_H,   KC_J,    KC_K,   KC_L,   LT(MDIA, KC_SCLN),KC_ENT,
              KC_B,        KC_N,   KC_M,    KC_COMM,KC_DOT, KC_SLSH,          KC_MINS,
