@@ -3,6 +3,9 @@
 #include "action_layer.h"
 #include "version.h"
 
+#undef  TAPPING_TERM
+#define TAPPING_TERM 5
+
 // Emoji
 const uint32_t PROGMEM unicode_map[] = {0x1F363};
 
