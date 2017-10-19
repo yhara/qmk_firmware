@@ -4,7 +4,7 @@
 #include "version.h"
 
 #undef  TAPPING_TERM
-#define TAPPING_TERM 5
+#define TAPPING_TERM 100
 
 // Emoji
 const uint32_t PROGMEM unicode_map[] = {0x1F363};
@@ -154,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |   ~  |  |   |   =  |  \   |  `   |------|           |------|      |  "   |  [   |   ]  |  '   |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |  +   |  {   |   }  |  _   |   _    |
+ * |        |      |      |      |      |      |      |           |      |      |  +   |  {   |   }  |  /   |   _    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  ,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_TRNS,
                  KC_NO  , KC_DQT , KC_LBRC, KC_RBRC, KC_QUOT, KC_TRNS,
-       KC_NO  ,  KC_NO  , KC_PLUS, KC_LCBR, KC_RCBR, KC_UNDS, KC_TRNS,
+       KC_NO  ,  KC_NO  , KC_PLUS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS,
                           KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
        KC_NO  , KC_NO  ,
        KC_NO  ,
