@@ -24,9 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  | `  ~ |           | '  " |   Y  |   U  |   I  |   O  |   P  |  BS    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Ctl/Esc|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  | ;  : |  Enter |
+ * | Ctl/Esc|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  | ;  : |  Enter/MDIA |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | = +  |           |      |   N  |   M  | ,  < | .  > | /  ? | RSft/- |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  | = +  |           |  B   |   N  |   M  | ,  < | .  > | /  ? | RSft/- |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |  Fn  | Alt  |  L1  | Cmd  |EISU/L|                                       |KANA/R| = +  | [  { | ]  } | L2 \ |
  *   `----------------------------------'                                       `----------------------------------'
@@ -44,19 +44,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
         KC_NO,          KC_NO,        KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
-        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_GRV,
+        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   KC_NO,
         CTL_T(KC_ESC),  KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_EQL,
+        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   KC_NO,
         MO(FN),         KC_LALT,    MO(SYMB), KC_LGUI, LT(LOWER,KC_LANG2),
                                                        KC_LEFT, KC_RIGHT,
                                                                 KC_HOME,
                                                 KC_SPC,KC_BSLS, KC_N,
         // right hand
              X(0),        KC_NO,  KC_NO,   KC_NO,  KC_NO,  KC_NO,            KC_NO,
-             KC_QUOT,     KC_Y,   KC_U,    KC_I,   KC_O,   KC_P,             KC_BSPC,
-                          KC_H,   KC_J,    KC_K,   KC_L,   KC_SCLN,          KC_ENT,
+             KC_NO,       KC_Y,   KC_U,    KC_I,   KC_O,   KC_P,             KC_BSPC,
+                          KC_H,   KC_J,    KC_K,   KC_L,   KC_SCLN,          LT(MDIA,KC_ENT),
              KC_NO,       KC_N,   KC_M,    KC_COMM,KC_DOT, KC_SLSH,          SFT_T(KC_MINS),
-                                  LT(RAISE,KC_LANG1),KC_EQL, KC_LBRC,KC_RBRC,          LT(MDIA,KC_BSLS),
+                                  LT(RAISE,KC_LANG1),KC_NO, KC_NO,KC_NO,     MO(MDIA),
              KC_LEFT,       KC_RIGHT,
              KC_UP,
              KC_DOWN,KC_EQL, LT(SYMB,KC_SPC)
@@ -150,11 +150,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   !  |  @   |   #  |  $   |  %   |      |           |      |  ^   |  &   |   (  |  )   |  *   |  BS    |
+ * |        |   !  |  @   |   #  |  $   |  %   |      |           |      |  ^   |  &   |  {   |   }  |  *   |  BS    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   ~  |  |   |   =  |  \   |  `   |------|           |------|      |  "   |  [   |   ]  |  '   | Enter  |
+ * |        |   ~  |  |   |   =  |  \   |  `   |------|           |------|      |  "   |  (   |   )  |  '   | Enter  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |  +   |  {   |   }  |  /   |   _    |
+ * |        |      |      |      |      |      |      |           |      |      |  +   |  [   |   ]  |  ?   |   _    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |  <   |   >  |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -177,10 +177,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_TRNS, KC_NO  , KC_NO  ,
     // right hand
        KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,
-       KC_NO  ,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_TRNS,
-                 KC_NO  , KC_DQT , KC_LBRC, KC_RBRC, KC_QUOT, KC_TRNS,
-       KC_NO  ,  KC_NO  , KC_PLUS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS,
-                          KC_NO  ,S(KC_COMM),S(KC_DOT), KC_NO  , KC_NO  ,
+       KC_NO  ,  KC_CIRC, KC_AMPR, KC_LCBR, KC_RCBR, KC_ASTR, KC_TRNS,
+                 KC_NO  , KC_DQT , KC_LPRN, KC_RPRN, KC_QUOT, KC_TRNS,
+       KC_NO  ,  KC_NO  , KC_PLUS, KC_LBRC, KC_RBRC, S(KC_SLSH),S(KC_MINS),
+                          KC_NO  ,S(KC_COMM),S(KC_DOT),KC_NO, KC_NO,
        KC_NO  , KC_NO  ,
        KC_NO  ,
        KC_NO  , KC_NO  , KC_TRNS  
