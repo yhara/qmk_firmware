@@ -15,30 +15,21 @@ extern keymap_config_t keymap_config;
 #define _RAISE 4
 #define _ADJUST 16
 
-enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  CURSOR,
-  MEDIA,
-  LOWER,
-  RAISE,
-  ADJUST,
-};
-
 // Fillers to make layering more clear
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
-// Macros
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-  // MACRODOWN only works in this function
-      switch(id) {
-        case 0:
-          SEND_STRING(SS_LCTRL("z")"[");
-          break;
-      }
-    return MACRO_NONE;
-};
+//// Macros
+//const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+//{
+//  // MACRODOWN only works in this function
+//      switch(id) {
+//        case 0:
+//          SEND_STRING(SS_LCTRL("z")"[");
+//          break;
+//      }
+//    return MACRO_NONE;
+//};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -57,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
 CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, LT(_MEDIA, KC_ENT), \
   KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS , \
-  ADJUST,   KC_LALT, CURSOR,KC_LGUI,LT(_LOWER,KC_LANG2),KC_SPC, LT(_CURSOR,KC_SPC),LT(_RAISE,KC_LANG1),KC_LEFT,KC_DOWN,KC_UP,KC_RGHT \
+  LT(_ADJUST,KC_LEFT),ALT_T(KC_DOWN),KC_A,GUI_T(KC_RIGHT),LT(_LOWER,KC_LANG2),KC_SPC, LT(_CURSOR,KC_SPC),LT(_RAISE,KC_LANG1),KC_LEFT,KC_DOWN,KC_UP,KC_RGHT \
 ),
 
 /* CURSOR
@@ -75,7 +66,7 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
   KC_NO  ,KC_F1,  KC_F2,  KC_F3,  KC_F4,   KC_F5,    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, \
   KC_NO  ,KC_NO  ,KC_NO  ,KC_END, KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_BSPC, \
   KC_NO  ,KC_HOME,KC_NO  ,KC_DEL, KC_PGDN, KC_NO  ,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_NO  , KC_F12, \
-  KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  , KC_PGUP,  KC_NO  , KC_NO  , M(0)   , KC_NO  , KC_NO  , KC_NO   \
+  KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  , KC_PGUP,  KC_NO  , KC_NO  , KC_NO   , KC_NO  , KC_NO  , KC_NO   \
 ),
 
 /* MEDIA
@@ -104,14 +95,14 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |      |      |      |      |      |      |     |  "   |  +   |  <   |   >  |  ?   |   _  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
- * |      |      |      |      |      |      |     |      |      |      |      |      |      |
+ * |RESET |      |      |      |      |      |     |      |      |      |      |      |      |
  * `------+------+------+------+------+------'     `------+------+------+------+------+------'
  */
 [_LOWER] = KEYMAP( \
   KC_NO  , KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_TRNS,
   KC_NO  , KC_TILD, KC_PIPE, KC_EQL , KC_BSLS, KC_GRV,   KC_QUOT, KC_LCBR, KC_LBRC, KC_RBRC, S(KC_SCLN), KC_RCBR,
   KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_DQT , KC_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),S(KC_MINS),
-  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
+  RESET  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
 ),
 
 /* Raise
@@ -152,64 +143,3 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 
 
 };
-
-void persistent_default_layer_set(uint16_t default_layer) {
-  eeconfig_update_default_layer(default_layer);
-  default_layer_set(default_layer);
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-        persistent_default_layer_set(1UL<<_QWERTY);
-      }
-      return false;
-      break;
-    case CURSOR:
-      if (record->event.pressed) {
-        layer_on(_CURSOR);
-      } else {
-        layer_off(_CURSOR);
-      }
-      return false;
-      break;
-    case MEDIA:
-      if (record->event.pressed) {
-        layer_on(_MEDIA);
-      } else {
-        layer_off(_MEDIA);
-      }
-      return false;
-      break;
-    case LOWER:
-      if (record->event.pressed) {
-        layer_on(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case ADJUST:
-      if (record->event.pressed) {
-        layer_on(_ADJUST);
-      } else {
-        layer_off(_ADJUST);
-      }
-      return false;
-      break;
-  }
-  return true;
-}
