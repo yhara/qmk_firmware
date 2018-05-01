@@ -98,14 +98,14 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |      |      |      |      |      |      |     |  "   |  +   |  <   |   >  |  ?   |   _  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
- * |RESET |      |      |      |LOWER |      |     |      |      |      |      |      |      |
+ * |RESET |      |      |      |LOWER |      |     |Space |      |      |      |      |      |
  * `------+------+------+------+------+------'     `------+------+------+------+------+------'
  */
 [_LOWER] = KEYMAP( \
   KC_NO  , KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_TRNS,
   KC_NO  , KC_TILD, KC_PIPE, KC_EQL , KC_BSLS, KC_GRV,   KC_QUOT, KC_LCBR, KC_LBRC, KC_RBRC, S(KC_SCLN), KC_RCBR,
   KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_DQT , KC_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),S(KC_MINS),
-  RESET  , KC_NO  , KC_NO  , KC_NO  , KC_TRNS, KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
+  RESET  , KC_NO  , KC_NO  , KC_NO  , KC_TRNS, KC_NO  ,  KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
 ),
 
 /* Raise
