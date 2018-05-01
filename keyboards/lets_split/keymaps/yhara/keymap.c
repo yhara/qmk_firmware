@@ -16,7 +16,7 @@ extern keymap_config_t keymap_config;
 #define _MEDIA 2
 #define _LOWER 3
 #define _RAISE 4
-#define _ADJUST 16
+#define _ADJUST 5
 
 // Fillers to make layering more clear
 #define _______ KC_TRNS
@@ -126,7 +126,7 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
   RESET,   _______, _______, _______, _______, _______, _______, _______, KC_NO,   KC_NO,   KC_NO,     KC_NO \
 ),
 
-/* Adjust (Lower + Raise)
+/* Fn
  * ,-----------------------------------------------------------------------------------.
  * | RESET|      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
