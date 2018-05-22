@@ -1,6 +1,7 @@
 #include "lets_split.h"
 #include "action_layer.h"
 #include "eeconfig.h"
+#include "keymap_jp.h"
 
 #undef  TAPPING_TERM
 #define TAPPING_TERM 100
@@ -92,19 +93,19 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 
 /* Lower
  * ,-----------------------------------------.     ,-----------------------------------------.
- * |      |   !  |  @   |   #  |  $   |  %   |     |  ^   |  &   |  (   |   )  |  *   |  BS  |
+ * |      |   !  |  "   |   #  |  $   |  %   |     |  &   |  ^   |  (   |   )  |  @   |  BS  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |      |   ~  |  |   |   =  |  \   |  `   |     |  '   |  {   |  [   |   ]  |  :   |   }  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
- * |      |      |      |      |      |      |     |  "   |  +   |  <   |   >  |  ?   |   _  |
+ * |      |      |      |      |      |      |     |  *   |  +   |  <   |   >  |  ?   |   _  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |RESET |      |      |      |LOWER |      |     |Space |      |      |      |      |      |
  * `------+------+------+------+------+------'     `------+------+------+------+------+------'
  */
 [_LOWER] = LAYOUT( \
-  KC_NO  , KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,  KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_ASTR, KC_TRNS,
-  KC_NO  , KC_TILD, KC_PIPE, KC_EQL , KC_BSLS, KC_GRV,   KC_QUOT, KC_LCBR, KC_LBRC, KC_RBRC, S(KC_SCLN), KC_RCBR,
-  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_DQT , KC_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),S(KC_MINS),
+  KC_NO  , KC_EXLM, S(KC_2), KC_HASH, KC_DLR , KC_PERC,  JP_AMPR, JP_CIRC, JP_LPRN, JP_RPRN, JP_AT  , KC_TRNS,
+  KC_NO  , S(JP_CIRC),S(JP_YEN),JP_EQL,JP_YEN, JP_GRV,   JP_QUOT, JP_LCBR, JP_LBRC, JP_RBRC, JP_COLN, JP_RCBR,
+  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  JP_ASTR, JP_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),JP_UNDS,
   RESET  , KC_NO  , KC_NO  , KC_NO  , KC_TRNS, KC_NO  ,  KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
 ),
 
@@ -122,7 +123,7 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 [_RAISE] = LAYOUT( \
   KC_TAB,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,      KC_TRNS, \
   KC_NO,   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,      KC_TRNS, \
-  _______, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,S(KC_SCLN), KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, \
+  _______, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   JP_COLN, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, \
   RESET,   _______, _______, _______, _______, _______, _______, _______, KC_NO,   KC_NO,   KC_NO,     KC_NO \
 ),
 
