@@ -2,6 +2,7 @@
 #include "action_layer.h"
 #include "eeconfig.h"
 #include "keymap_jp.h"
+#include "sendstring_jis.h"
 
 #undef  TAPPING_TERM
 #define TAPPING_TERM 100
@@ -57,7 +58,7 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 
 /* CURSOR
  * ,-----------------------------------------.    ,------------------------------------------.
- * |      |      |      | End  |      |      |    |      |      |      |      |      | BkSp  |
+ * |      |      |      | End  |      |      |    |      |      |      |      | ^z[  | BkSp  |
  * |------+------+------+------+------+------|    |------+------+------+------+------+-------|
  * |      | Home |      | Del  |PgDn  |      |    | Left | Down | Up   | Right|      |       |
  * |------+------+------+------+------+------|    |------+------+------+------+------+-------|
@@ -67,7 +68,7 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
  * `------+------+------+------+------+------'    `------+------+------+------+------+-------'
  */
 [_CURSOR] = LAYOUT( \
-  KC_NO  ,KC_NO  ,KC_NO  ,KC_END, KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_BSPC, \
+  KC_NO  ,KC_NO  ,KC_NO  ,KC_END, KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , M(0)  , KC_BSPC, \
   KC_NO  ,KC_HOME,KC_NO  ,KC_DEL, KC_PGDN, KC_NO  ,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_NO  , KC_NO, \
   KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  , KC_PGUP,  KC_NO  , KC_NO  , M(0)   , KC_NO  , KC_NO  , KC_NO,  \
   KC_NO  ,KC_NO  ,KC_TRNS,KC_NO  ,KC_NO  , KC_NO  ,  KC_TRNS, KC_NO  , KC_NO   , KC_NO  , KC_NO  , KC_NO
