@@ -94,19 +94,19 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 
 /* Lower
  * ,-----------------------------------------.     ,-----------------------------------------.
- * |      |   !  |  "   |   #  |  $   |  %   |     |  &   |  ^   |  (   |   )  |  @   |  BS  |
+ * |      |   !  |  @   |   #  |  $   |  %   |     |  ^   |  &   |  (   |   )  |  *   |  BS  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |      |   ~  |  |   |   =  |  \   |  `   |     |  '   |  {   |  [   |   ]  |  :   |   }  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
- * |      |      |      |      |      |      |     |  *   |  +   |  <   |   >  |  ?   |   _  |
+ * |      |      |      |      |      |      |     |  "   |  +   |  <   |   >  |  ?   |   _  |
  * |------+------+------+------+------+------|     |------+------+------+------+------+------|
  * |RESET |      |      |      |LOWER |      |     |Space |      |      |      |      |      |
  * `------+------+------+------+------+------'     `------+------+------+------+------+------'
  */
 [_LOWER] = LAYOUT( \
-  KC_NO  , KC_EXLM, S(KC_2), KC_HASH, KC_DLR , KC_PERC,  JP_AMPR, JP_CIRC, JP_LPRN, JP_RPRN, JP_AT  , KC_TRNS,
+  KC_NO  , KC_EXLM, JP_AT  , KC_HASH, KC_DLR , KC_PERC,  JP_CIRC, JP_AMPR, JP_LPRN, JP_RPRN, JP_ASTR, KC_TRNS,
   KC_NO  , S(JP_CIRC),S(JP_YEN),JP_EQL,JP_YEN, JP_GRV,   JP_QUOT, JP_LCBR, JP_LBRC, JP_RBRC, JP_COLN, JP_RCBR,
-  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  JP_ASTR, JP_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),JP_UNDS,
+  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  JP_DQT , JP_PLUS, S(KC_COMM),S(KC_DOT),S(KC_SLSH),JP_UNDS,
   RESET  , KC_NO  , KC_NO  , KC_NO  , KC_TRNS, KC_NO  ,  KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO
 ),
 
