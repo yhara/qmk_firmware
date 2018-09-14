@@ -5,7 +5,7 @@
 #include "sendstring_jis.h"
 
 #undef  TAPPING_TERM
-#define TAPPING_TERM 100
+#define TAPPING_TERM 5
 
 extern keymap_config_t keymap_config;
 
