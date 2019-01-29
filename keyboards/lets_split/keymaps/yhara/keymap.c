@@ -4,9 +4,6 @@
 #include "keymap_jp.h"
 #include "sendstring_jis.h"
 
-#undef  TAPPING_TERM
-#define TAPPING_TERM 5
-
 extern keymap_config_t keymap_config;
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
