@@ -88,8 +88,8 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
 [_MEDIA] = LAYOUT( \
   KC_NO  , KC_NO  , KC_NO  , KC_MS_U, KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_MPLY, KC_NO, \
   KC_NO  , KC_NO  , KC_MS_L, KC_MS_D, KC_MS_R, KC_NO  ,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_NO  , KC_TRNS  , \
-  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , S(LALT(KC_VOLD)), S(LALT(KC_VOLU)), KC_MUTE, KC_NO  , KC_NO,  \
-  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO 
+  KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , S(LALT(KC_VOLD)), S(LALT(KC_VOLU)), KC_MUTE, KC_NO  , KC_NO,  \
+  KC_NO  , KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO 
 ),
 
 /* Lower
