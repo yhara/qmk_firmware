@@ -43,14 +43,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |Shift/_|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |  -   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Fn   | Alt  |CURSOR| Cmd  |Eisu/L|Sp/Ctl|Sp/CUR|Kana/R| Left | Down |  Up  |Right |
+ * | Fn   | Alt  |  Alt | Cmd  |Eisu/L|Sp/CUR|Sp/CUR|Kana/R| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT( \
   KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
 CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, LT(_MEDIA, KC_ENT), \
   LSFT_T(JP_UNDS),    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS , \
-  LT(_ADJUST,KC_LEFT),ALT_T(KC_DOWN),LT(_CURSOR,KC_UP),GUI_T(KC_RIGHT),LT(_LOWER,KC_LANG2),CTL_T(KC_SPC), LT(_CURSOR,KC_SPC),LT(_RAISE,KC_LANG1),KC_LEFT,KC_DOWN,KC_UP,KC_RGHT \
+  LT(_ADJUST,KC_LEFT),ALT_T(KC_DOWN),ALT_T(KC_UP),GUI_T(KC_RIGHT),LT(_LOWER,KC_LANG2),LT(_CURSOR,KC_SPC), LT(_CURSOR,KC_SPC),LT(_RAISE,KC_LANG1),KC_LEFT,KC_DOWN,KC_UP,KC_RGHT \
 ),
 
 /* CURSOR
@@ -61,14 +61,14 @@ CTL_T(KC_ESC),KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_
  * |------+------+------+------+------+------|    |------+------+------+------+------+-------|
  * |      |      |      |      |      | PgUp |    |      |      | ^z[  |      |      |       |
  * |------+------+------+------+------+------|    |------+------+------+------+------+-------|
- * |      |      |CURSOR|      |      |      |    |CURSOR|      |      |      |      |       |
+ * |      |      |      |      |      |CURSOR|    |CURSOR|      |      |      |      |       |
  * `------+------+------+------+------+------'    `------+------+------+------+------+-------'
  */
 [_CURSOR] = LAYOUT( \
   KC_NO  ,KC_NO  ,KC_NO  ,KC_END, KC_NO  , KC_NO  ,  KC_NO  , KC_NO  , KC_NO  , KC_NO  , M(0)  , KC_BSPC, \
   KC_NO  ,KC_HOME,KC_NO  ,KC_DEL, KC_PGDN, KC_NO  ,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_NO  , KC_NO, \
   KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  ,KC_NO  , KC_PGUP,  KC_NO  , KC_NO  , M(0)   , KC_NO  , KC_NO  , KC_NO,  \
-  KC_NO  ,KC_NO  ,KC_TRNS,KC_NO  ,KC_NO  , KC_NO  ,  KC_TRNS, KC_NO  , KC_NO   , KC_NO  , KC_NO  , KC_NO
+  KC_NO  ,KC_NO  ,KC_NO,  KC_NO  ,KC_NO  , KC_TRNS,  KC_TRNS, KC_NO  , KC_NO   , KC_NO  , KC_NO  , KC_NO
 ),
 
 /* MEDIA
